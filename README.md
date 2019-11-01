@@ -15,11 +15,33 @@ Looking for the essentials only? Say no more.
 > git é nois
 
 ___
+
 # Lyly's favorite Git commands (∩ᄑ_ᄑ)⊃━☆ﾟ*･｡*･:
 
 > git vim te cumer
+
 ___
+
 # Gustavo's favorite Git commands (∩ᄑ_ᄑ)⊃━☆ﾟ*･｡*･:
 
 > git ouvir um saxon
 > git fazer um sexon
+
+Now seriously:
+
+## Commands for when shit's ready to go
+
+```
+git add --all
+git commit -m "commit message"
+git push --set-upstream origin $(git_current_branch)
+```
+
+Usually I set some aliases to deal with this flow
+
+```
+alias gaa="git add --all"
+alias gcam="git commit -m"
+alias gpsup="git push --set-upstream origin $(git_current_branch)"
+```
+
