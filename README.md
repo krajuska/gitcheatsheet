@@ -13,9 +13,9 @@ ___
 Looking for the essentials only? Say no more.
 
 ```
-git add <filename>
+git add \<filename>
 ```
-* adds the file named <filename> into the staging area
+* adds the file named \<filename> into the staging area
 
 ```
 git commit -m "message"
@@ -23,9 +23,9 @@ git commit -m "message"
 * commits the staged files with the message between the double quotes
 
 ```
-git push origin <branchname>
+git push origin \<branchname>
 ```
-* pushes your commits into the branch named <branchname>
+* pushes your commits into the branch named \<branchname>
 ___
 
 # Lyly's favorite Git commands (∩ᄑ_ᄑ)⊃━☆ﾟ*･｡*･:
@@ -49,27 +49,27 @@ git reset --soft HEAD~n
 
 * substitute **n** for the number of non-pushed commits you want to go back to
 ```
-git reset --soft <commithash>
+git reset --soft \<commithash>
 ```
-* goes back to the state of the commit identified as <commithash> 
+* goes back to the state of the commit identified as \<commithash> 
 
 * also: using _'git reset --soft ...'_ goes back to a specific commit and puts the changes commited after that into the code again. If you want to go back to a specific commit and **discard** the changes done, use 'git reset --hard ...'
 ```
-git checkout -b <branchname>
+git checkout -b \<branchname>
 ```
-* creates a branch called <branchname> and then sets it as the current branch
+* creates a branch called \<branchname> and then sets it as the current branch
 ```
-git checkout -m <newbranchname>
+git checkout -m \<newbranchname>
 ```
-* resets the name of the current branch to <newbranchname>
+* resets the name of the current branch to \<newbranchname>
 ```
-git checkout --orphan <branchname>
+git checkout --orphan \<branchname>
 ```
-* creates a new **empty** branch called <branchname>
+* creates a new **empty** branch called \<branchname>
 ```
-git branch -D <branchname>
+git branch -D \<branchname>
 ```
-* deletes the branch called <branchname>
+* deletes the branch called \<branchname>
 ```
 git stash 
 ```
@@ -84,9 +84,9 @@ git stash apply
 ```
 * applies the latest created stash into the current branch
 ```
-git stash drop <stashID>
+git stash drop \<stashID>
 ```
-* deletes the stash identified as <stashID> 
+* deletes the stash identified as \<stashID> 
 ```
 git stash pop
 ```
