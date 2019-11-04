@@ -12,13 +12,85 @@ ___
 
 Looking for the essentials only? Say no more.
 
-> git é nois
+```
+git add <filename>
+```
+* adds the file named <filename> into the staging area
 
+```
+git commit -m "message"
+```
+* commits the staged files with the message between the double quotes
+
+```
+git push origin <branchname>
+```
+* pushes your commits into the branch named <branchname>
 ___
 
 # Lyly's favorite Git commands (∩ᄑ_ᄑ)⊃━☆ﾟ*･｡*･:
 
-> git vim te cumer
+```
+git add .
+```
+* adds ALL of the changed files into the staging area
+```
+git commit -am "message"
+```
+* adds all of the changed files into the staging area, then commits them with the message between the double quotes
+```
+git log
+```
+* shows the history of commits (it's important to get the hash of your commits (the first seven chars of your commits hash are enough to identify them (´｡• ᵕ •｡`))
+```
+git reset --soft HEAD~n 
+```
+* goes back to the state of **n** commits behind.
+
+* substitute **n** for the number of non-pushed commits you want to go back to
+```
+git reset --soft <commithash>
+```
+* goes back to the state of the commit identified as <commithash> 
+
+* also: using _'git reset --soft ...'_ goes back to a specific commit and puts the changes commited after that into the code again. If you want to go back to a specific commit and **discard** the changes done, use 'git reset --hard ...'
+```
+git checkout -b <branchname>
+```
+* creates a branch called <branchname> and then sets it as the current branch
+```
+git checkout -m <newbranchname>
+```
+* resets the name of the current branch to <newbranchname>
+```
+git checkout --orphan <branchname>
+```
+* creates a new **empty** branch called <branchname>
+```
+git branch -D <branchname>
+```
+* deletes the branch called <branchname>
+```
+git stash 
+```
+* saves all of the unstaged changes into a stash
+```
+git stash list
+```
+* lists all of your stashed changes 
+* note that the important thing to get from here is the identification of each stash (usually identified as **"stash@{N}"**
+```
+git stash apply
+```
+* applies the latest created stash into the current branch
+```
+git stash drop <stashID>
+```
+* deletes the stash identified as <stashID> 
+```
+git stash pop
+```
+* removes the latest created stash and applies it on the current branch
 
 ___
 
