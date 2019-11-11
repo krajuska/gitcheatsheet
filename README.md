@@ -21,6 +21,7 @@ git add <filename>
 git commit -m "message"
 ```
 * commits the staged files with the message between the double quotes
+> I (gkrajuska) personally don't like the "-m" flag because it doesn't open Vim (the most feared text editor on Earth) with the **diff** (differences) between staged files. I only use this commit method if I'm 350% sure of the changes included in the commit.
 
 ```
 git push origin <branchname>
@@ -34,20 +35,24 @@ ___
 git add .
 ```
 * adds ALL of the changed files into the staging area
+
 ```
 git commit -am "message"
 ```
 * adds all of the changed files into the staging area, then commits them with the message between the double quotes
+
 ```
 git log
 ```
 * shows the history of commits (it's important to get the hash of your commits (the first seven chars of your commits hash are enough to identify them (´｡• ᵕ •｡`))
+
 ```
 git reset --soft HEAD~n 
 ```
 * goes back to the state of **n** commits behind.
 
 * substitute **n** for the number of non-pushed commits you want to go back to
+
 ```
 git reset --soft <commithash>
 ```
@@ -58,35 +63,48 @@ git reset --soft <commithash>
 git checkout -b <branchname>
 ```
 * creates a branch called \<branchname> and then sets it as the current branch
+
 ```
 git checkout -m <newbranchname>
 ```
 * resets the name of the current branch to \<newbranchname>
+
 ```
 git checkout --orphan <branchname>
 ```
 * creates a new **empty** branch called \<branchname>
+> gkrajuska's notes:
+>> by **empty**, krajuska meant that the branch will be created with no history attached to the root of the branch you were checked out before running the --orphan flagged command
+
 ```
 git branch -D <branchname>
 ```
 * deletes the branch called \<branchname>
+> gkrajuska's notes:
+>> the **-D** flag forces deletion if the branch was not merged to another branch. If you want to be notified in case your branch's changes weren't merged, use the lowercase **-d** flag
+
 ```
-git stash 
+git stash [push]
 ```
-* saves all of the unstaged changes into a stash
+* saves all of the unstaged changes into a stash.
+* executing **stash** without any further arguments is the same as executing **stash push**
+
 ```
 git stash list
 ```
 * lists all of your stashed changes 
 * note that the important thing to get from here is the identification of each stash (usually identified as **"stash@{N}"**
+
 ```
 git stash apply
 ```
 * applies the latest created stash into the current branch
+
 ```
 git stash drop <stashID>
 ```
 * deletes the stash identified as \<stashID> 
+
 ```
 git stash pop
 ```
