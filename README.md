@@ -47,7 +47,7 @@ git log
 * shows the history of commits (it's important to get the hash of your commits (the first seven chars of your commits hash are enough to identify them (´｡• ᵕ •｡`))
 
 ```
-git reset --soft HEAD~n 
+git reset --soft HEAD~n
 ```
 * goes back to the state of **n** commits behind.
 
@@ -56,7 +56,7 @@ git reset --soft HEAD~n
 ```
 git reset --soft <commithash>
 ```
-* goes back to the state of the commit identified as \<commithash> 
+* goes back to the state of the commit identified as \<commithash>
 
 * also: using _'git reset --soft ...'_ goes back to a specific commit and puts the changes commited after that into the code again. If you want to go back to a specific commit and **discard** the changes done, use 'git reset --hard ...'
 ```
@@ -92,18 +92,18 @@ git stash [push]
 ```
 git stash list
 ```
-* lists all of your stashed changes 
+* lists all of your stashed changes
 * note that the important thing to get from here is the identification of each stash (usually identified as **"stash@{N}"**
 
 ```
 git stash apply
 ```
-* applies the latest created stash into the current branch
+* applies the latest created stash into the current branch without removing the entry from the stashlist (great to check if your stashed changes fit the current branch)
 
 ```
 git stash drop <stashID>
 ```
-* deletes the stash identified as \<stashID> 
+* deletes the stash identified as \<stashID>
 
 ```
 git stash pop
@@ -114,24 +114,43 @@ ___
 
 # Gustavo's favorite Git commands (∩ᄑ_ᄑ)⊃━☆ﾟ*･｡*･:
 
-> git ouvir um saxon
-> git fazer um sexon
-
-Now seriously:
-
 ## Commands for when shit's ready to go
 
 ```
 git add --all
+```
+* add every change to the staged area
+
+```
 git commit -m "commit message"
+```
+* commit to the staged area's changes
+
+```
 git push --set-upstream origin $(git_current_branch)
 ```
+* push to the remote branch even if it doesn't exists yet
 
-Usually I set some aliases to deal with this flow
+  * Usually I set some aliases to deal with this flow
+
+  ```
+  alias gaa="git add --all"
+  alias gcam="git commit -m"
+  alias gpsup="git push --set-upstream origin $(git_current_branch)"
+  ```
 
 ```
-alias gaa="git add --all"
-alias gcam="git commit -m"
-alias gpsup="git push --set-upstream origin $(git_current_branch)"
+git ls-files
 ```
+* now this is an interesting one, it lists all the files in the repository's index (index is the "place" where all references to tracked files are)
 
+* you can do a lot of cool stuff with this command, like using pipes to open all the modified files in a working tree
+
+```
+git ls-files -m | xargs code
+```
+* the command above uses the **-m** flag to list only modified files and passes the list to **xargs** which will pass every line separately to the command you provide after xargs (in this case, **code**)
+  * setting up an alias to this command is really nice, so you can go like "cm" and open every modified file in your favorite text editor
+  ```
+  alias cm='git ls-files -m | xargs code'
+  ```
