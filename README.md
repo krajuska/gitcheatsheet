@@ -154,3 +154,9 @@ git ls-files -m | xargs code
   ```
   alias cm='git ls-files -m | xargs code'
   ```
+
+**prepare for the LIT MACHINE**
+```
+git add $(fzf)
+```
+* opens up fuzzy find (you may need to install it) and the file you type is going to be staged, REALLY useful when you want to stage a single file on your tree and thinks that typing the relative path is a fucking chore
