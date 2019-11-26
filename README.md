@@ -139,6 +139,8 @@ git push --set-upstream origin $(git_current_branch)
   alias gpsup="git push --set-upstream origin $(git_current_branch)"
   ```
 
+## Complex commands that are really helpful and not as much explored by tutorials
+
 ```
 git ls-files
 ```
@@ -160,3 +162,12 @@ git ls-files -m | xargs code
 git add $(fzf)
 ```
 * opens up fuzzy find (you may need to install it) and the file you type is going to be staged, REALLY useful when you want to stage a single file on your tree and thinks that typing the relative path is a fucking chore
+
+```
+git add $(git ls-files -m|fzf)
+```
+* opens up fuzzy find ONLY with modified files, it's a dream coming true, my dudes
+  * you can also use this **fzf** approach to **git restore** commands, so you can restore selected files easily
+
+---
+
